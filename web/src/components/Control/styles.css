@@ -1,0 +1,72 @@
+.control-wrapper {
+  border: 1px solid #5f6368;
+  caret-color: #48a1ff;
+  color: #999da2;
+  overflow: hidden;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  flex: 1;
+}
+
+.control-wrapper:nth-child(2) {
+  margin-left: 15px;
+}
+
+.input-value {
+  background-color: #202124;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  text-align: left;
+  line-height: 24px;
+  -moz-appearance: textfield;
+  padding: 1px 6px 1px 12px;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  border: 0;
+  height: 48px;
+  color: #bdc1c6;
+}
+
+.select-currency {
+  border: 0;
+  outline: 0;
+  height: 100%;
+  line-height: 50px;
+  z-index: 1;
+  word-break: break-all;
+  color: #bdc1c6;
+  background-color: #202124;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f5055;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f5055b6;
+}
+
+
+.input-value::-webkit-outer-spin-button,
+.input-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input-value[type='number'] {
+  -moz-appearance: textfield;
+}

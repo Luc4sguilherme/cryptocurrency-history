@@ -1,0 +1,41 @@
+.infos-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+.currency-value {
+  margin-bottom: 15px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.currency {
+  font-size: 16px;
+  color: #9aa0a6;
+}
+
+.status {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.infos-source {
+  width: 100%;
+  display: inline-flex;
+  font-size: 13px;
+}
+
+.separator {
+  margin: 0 8px;
+}
+
+.font-link {
+  color: #8a8a8a;
+  text-decoration: underline;
+}

@@ -1,0 +1,32 @@
+.period-control {
+  list-style: none;
+}
+
+.period-control li {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.period {
+  visibility: hidden;
+}
+
+.period + label {
+  cursor: pointer;
+}
+
+.period:checked + label {
+  color: #8ab4f8;
+  position: relative;
+}
+
+.period:checked + label::after {
+  content: '';
+  background: #8ab4f8;
+  border-radius: 4px 4px 0 0;
+  width: 120%;
+  height: 4px;
+  left: -3px;
+  bottom: -8px;
+  position: absolute;
+}
