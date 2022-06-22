@@ -59,7 +59,7 @@ function Graph({ data, period }: GraphProps) {
             dataKey="name"
             type="number"
             scale="time"
-            interval={intervalFormatter(period, data.length, 6)}
+            interval={intervalFormatter(data.length, 6)}
             domain={['auto', 'auto']}
             tickFormatter={value => tickFormatter(value, period)}
             tick={{ fill: '#9aa0a6' }}
