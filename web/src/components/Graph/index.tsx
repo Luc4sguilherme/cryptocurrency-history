@@ -48,7 +48,7 @@ function Graph({ data, period }: GraphProps) {
   return (
     <div className="graph-container">
       <ResponsiveContainer>
-        <ComposedChart data={data}>
+        <ComposedChart data={data} margin={{ left: 25 }}>
           <defs>
             <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="15%" stopColor="#82ca9d" stopOpacity={0.1} />
