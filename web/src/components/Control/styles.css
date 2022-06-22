@@ -15,7 +15,7 @@
   margin-left: 15px;
 }
 
-.input-value {
+.currency-value-input {
   background-color: #202124;
   margin: 0;
   outline: 0;
@@ -31,10 +31,10 @@
   color: #bdc1c6;
 }
 
-.select-currency {
+.currency-selector {
   border: 0;
   outline: 0;
-  height: 100%;
+  height: 48px;
   line-height: 50px;
   z-index: 1;
   word-break: break-all;
@@ -59,14 +59,13 @@
   background: #4f5055b6;
 }
 
-
-.input-value::-webkit-outer-spin-button,
-.input-value::-webkit-inner-spin-button {
+.currency-value-input::-webkit-outer-spin-button,
+.currency-value-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-.input-value[type='number'] {
+.currency-value-input[type='number'] {
   -moz-appearance: textfield;
 }

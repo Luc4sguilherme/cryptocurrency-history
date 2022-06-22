@@ -28,7 +28,7 @@ function Control({
       <input
         type="number"
         name={`${type}-value`}
-        className="input-value"
+        className="currency-value-input"
         value={value}
         min={1}
         onChange={event => handleChange(event)}
@@ -37,7 +37,7 @@ function Control({
       <select
         name={`${type}`}
         id={`${type}`}
-        className="select-currency"
+        className="currency-selector"
         value={currency}
         onChange={event => setCurrency(event.currentTarget.value)}
       >
