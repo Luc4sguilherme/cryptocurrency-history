@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Converter from './components/Converter';
 import Graph from './components/Graph';
 import Infos from './components/Infos';
+import Loading from './components/Loading';
 import PeriodControl from './components/PeriodControl';
 import { getPricesHistory, getSpotPrices, Period } from './services/api';
 import numberFormatter from './util/numberFormatter';
@@ -51,7 +52,7 @@ function App() {
   }, [currency, cryptocurrency]);
 
   if (historic.length === 0) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
