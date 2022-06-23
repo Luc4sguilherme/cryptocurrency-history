@@ -15,6 +15,7 @@ import { History } from '../../App';
 import { Period } from '../../services/api';
 import intervalFormatter from '../../util/intervalFormatter';
 import isDeviceMobile from '../../util/isDeviceMobile';
+import numberFormatter from '../../util/numberFormatter';
 import tickFormatter from '../../util/tickFormatter';
 import timeFormatter from '../../util/timeFormatter';
 import ScreenshotButton from '../ScreenshotButton';
@@ -38,8 +39,8 @@ function CustomTooltip(props: any) {
 
     return (
       <div>
-        <p>
-          {price} {timeFormatter(time, period)}
+        <p style={{ wordSpacing: '5px' }}>
+          {numberFormatter(price, 2, true)} {timeFormatter(time, period)}
         </p>
       </div>
     );
@@ -77,6 +78,7 @@ function Graph({ data, period }: GraphProps) {
             padding={{ top: 15, bottom: 15 }}
             tick={{ fill: '#9aa0a6' }}
             dx={-10}
+            tickFormatter={value => numberFormatter(value, 2, true) as string}
           />
           <Tooltip
             content={<CustomTooltip period={period} />}

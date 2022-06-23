@@ -1,6 +1,9 @@
+import numberSimplifier from './numberSimplifier';
+
 export default function numberFormatter(
   number: number | string,
   precision: number,
+  simplify = false,
 ) {
   const valueFormated = Number(number).toLocaleString('en-US', {
     useGrouping: false,
@@ -8,5 +11,11 @@ export default function numberFormatter(
     maximumFractionDigits: precision,
   });
 
-  return Number(valueFormated);
+  const value = Number(valueFormated);
+
+  if (simplify) {
+    return numberSimplifier(value, 2);
+  }
+
+  return value;
 }

@@ -49,7 +49,7 @@ function Converter({
 
   useEffect(() => {
     setValueOfCurrency(
-      numberFormatter(currencyPrice * valueOfcryptocurrency, 2),
+      numberFormatter(currencyPrice * valueOfcryptocurrency, 2) as number,
     );
   }, [valueOfcryptocurrency, currencyPrice]);
 

@@ -20,7 +20,7 @@ function Infos({ currency, currencyPrice, historic }: InfosProps) {
       const initialValue = historic.filter(value => value.price > 0)[0].price;
       const finalValue = currencyPrice;
       const diff = finalValue - initialValue;
-      const value = numberFormatter(Math.abs(diff), 2);
+      const value = numberFormatter(Math.abs(diff), 2, true);
       const percentage = numberFormatter(
         Math.abs(diff / initialValue) * 100,
         2,
@@ -43,7 +43,7 @@ function Infos({ currency, currencyPrice, historic }: InfosProps) {
   return (
     <div className="infos-wrapper">
       <div className="currency-value">
-        <span className="value">{currencyPrice}</span>
+        <span className="value">{numberFormatter(currencyPrice, 2, true)}</span>
         <span className="currency">{currency}</span>
       </div>
       {status && (

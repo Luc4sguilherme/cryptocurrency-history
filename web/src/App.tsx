@@ -32,7 +32,7 @@ function App() {
           .map(({ time, price }) => {
             return {
               name: moment(time).valueOf(),
-              price: numberFormatter(price, 2),
+              price: numberFormatter(price, 2) as number,
               time,
             };
           })
@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     getSpotPrices(`${cryptocurrency}-${currency}`)
       .then(data => {
-        setCurrencyPrice(numberFormatter(data.amount, 2));
+        setCurrencyPrice(numberFormatter(data.amount, 2) as number);
       })
       .catch(error => console.error(error.message));
   }, [currency, cryptocurrency]);
