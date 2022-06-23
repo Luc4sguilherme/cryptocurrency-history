@@ -17,9 +17,16 @@ function ScreenshotButton() {
 
   async function handleTakeScreenshot() {
     try {
-      const canvas = await html2canvas(
-        document.querySelector('.contents-wrapper')!,
-      );
+      const ignoreElements = ['download-button', 'converter-wrapper'];
+
+      const canvas = await html2canvas(document.querySelector('.App')!, {
+        backgroundColor: '#202124',
+        ignoreElements: element => {
+          return ignoreElements.some(className =>
+            element.classList.contains(className),
+          );
+        },
+      });
       const base64image = canvas.toDataURL('image/png');
 
       handleSaveFile(base64image);
@@ -35,8 +42,8 @@ function ScreenshotButton() {
       className="download-button"
     >
       <svg
-        width={25}
-        height={25}
+        width={22}
+        height={22}
         viewBox="0 -0.5 17 17"
         xmlns="http://www.w3.org/2000/svg"
         className="download-icon"

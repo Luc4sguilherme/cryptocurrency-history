@@ -14,14 +14,31 @@
   flex-direction: column;
   background-color: #202124;
   color: #bdc1c6;
-  font-family: arial,sans-serif;
+  font-family: arial, sans-serif;
+}
+
+.App {
+  padding: 20px;
+  width: 60vw;
+}
+
+.title {
+  padding-bottom: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: #f0f0f0;
 }
 
 .contents-wrapper {
-  width: 60vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: #202124;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

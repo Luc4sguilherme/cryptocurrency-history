@@ -8,7 +8,6 @@ import Graph from './components/Graph';
 import Infos from './components/Infos';
 import Loading from './components/Loading';
 import PeriodControl from './components/PeriodControl';
-import ScreenshotButton from './components/ScreenshotButton';
 import { getPricesHistory, getSpotPrices, Period } from './services/api';
 import numberFormatter from './util/numberFormatter';
 import timeSorter from './util/timeSorter';
@@ -58,7 +57,10 @@ function App() {
 
   return (
     <div className="App">
-      <ScreenshotButton />
+      <header className="header-wrapper">
+        <h1 className="title">{cryptocurrency}</h1>
+      </header>
+
       <main className="contents-wrapper">
         <Infos
           currency={currency}
@@ -67,6 +69,9 @@ function App() {
         />
         <PeriodControl setPeriod={setPeriod} />
         <Graph data={historic} period={period} />
+      </main>
+
+      <footer className="footer-wrapper">
         <Converter
           currency={currency}
           cryptocurrency={cryptocurrency}
@@ -74,7 +79,7 @@ function App() {
           setCurrency={setCurrency}
           setCryptocurrency={setCryptocurrency}
         />
-      </main>
+      </footer>
     </div>
   );
 }

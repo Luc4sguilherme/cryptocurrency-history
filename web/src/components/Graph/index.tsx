@@ -16,6 +16,7 @@ import { Period } from '../../services/api';
 import intervalFormatter from '../../util/intervalFormatter';
 import tickFormatter from '../../util/tickFormatter';
 import timeFormatter from '../../util/timeFormatter';
+import ScreenshotButton from '../ScreenshotButton';
 
 type GraphProps = {
   data: History[];
@@ -47,6 +48,7 @@ function CustomTooltip(props: any) {
 function Graph({ data, period }: GraphProps) {
   return (
     <div className="graph-container">
+      <ScreenshotButton />
       <ResponsiveContainer>
         <ComposedChart data={data} margin={{ left: 25 }}>
           <defs>

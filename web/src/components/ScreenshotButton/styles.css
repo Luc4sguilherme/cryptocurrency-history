@@ -2,8 +2,8 @@
   border: 0;
   background-color: transparent;
   position: absolute;
-  right: 20%;
-  top: 12%;
+  right: 5px;
+  top: -65px;
 }
 
 .download-button:hover {
