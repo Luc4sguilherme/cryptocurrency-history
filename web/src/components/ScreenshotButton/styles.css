@@ -1,0 +1,11 @@
+.download-button {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 20%;
+  top: 12%;
+}
+
+.download-button:hover {
+  cursor: pointer;
+}
