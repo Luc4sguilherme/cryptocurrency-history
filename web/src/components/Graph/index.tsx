@@ -23,14 +23,14 @@ type GraphProps = {
 };
 
 function CustomTooltip(props: any) {
-  const { active, period } = props;
+  const { active, period, payload } = props;
 
-  if (active) {
-    const {
-      payload: [{ payload }],
-    } = props;
-
-    const { time, price } = payload;
+  if (active && payload) {
+    const [
+      {
+        payload: { time, price },
+      },
+    ] = payload;
 
     return (
       <div>
