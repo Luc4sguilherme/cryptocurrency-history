@@ -29,6 +29,8 @@ function Control({
         type="number"
         name={`${type}-value`}
         className="currency-value-input"
+        title={`${type} value input`}
+        placeholder={`${type} value`}
         value={value}
         min={1}
         onChange={event => handleChange(event)}
@@ -38,6 +40,7 @@ function Control({
         name={`${type}`}
         id={`${type}`}
         className="currency-selector"
+        title={`${type} selector`}
         value={currency}
         onChange={event => setCurrency(event.currentTarget.value)}
       >

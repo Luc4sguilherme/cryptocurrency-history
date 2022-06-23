@@ -41,7 +41,7 @@ function ScreenshotButton() {
         xmlns="http://www.w3.org/2000/svg"
         className="download-icon"
       >
-        <title>Download Icon</title>
+        <title>Download</title>
         <g fill="#bdc1c6" fillRule="evenodd">
           <path
             d="M15.031 9.016v4H3v-4H1V16h15.938V9.016h-1.907Z"
