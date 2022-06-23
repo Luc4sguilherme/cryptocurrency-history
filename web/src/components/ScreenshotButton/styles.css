@@ -9,3 +9,20 @@
 .download-button:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .download-button {
+    top: -60px;
+  }
+
+  .download-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .download-button {
+    top: -15px;
+  }
+}

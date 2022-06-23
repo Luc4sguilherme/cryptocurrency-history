@@ -1,6 +1,7 @@
 .infos-wrapper {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  padding-left: 20px;
   line-height: 30px;
 }
 
@@ -10,7 +11,7 @@
 
 .value {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 32px;
   margin-right: 10px;
 }
 
@@ -37,4 +38,30 @@
 .font-link {
   color: #8a8a8a;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 500px) {
+  .value {
+    font-size: 24px;
+  }
+
+  .currency {
+    font-size: 14px;
+  }
+
+  .status {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .infos-source {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .infos-wrapper {
+    margin-bottom: 40px;
+    line-height: 25px;
+  }
 }

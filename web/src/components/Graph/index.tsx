@@ -14,9 +14,12 @@ import {
 import { History } from '../../App';
 import { Period } from '../../services/api';
 import intervalFormatter from '../../util/intervalFormatter';
+import isDeviceMobile from '../../util/isDeviceMobile';
 import tickFormatter from '../../util/tickFormatter';
 import timeFormatter from '../../util/timeFormatter';
 import ScreenshotButton from '../ScreenshotButton';
+
+const POINTS = 6;
 
 type GraphProps = {
   data: History[];
@@ -46,10 +49,12 @@ function CustomTooltip(props: any) {
 }
 
 function Graph({ data, period }: GraphProps) {
+  const amountOfPoints = isDeviceMobile() ? Math.trunc(POINTS / 2) : POINTS;
+
   return (
     <div className="graph-container">
       <ScreenshotButton />
-      <ResponsiveContainer>
+      <ResponsiveContainer className="graph">
         <ComposedChart data={data} margin={{ left: 25 }}>
           <defs>
             <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
@@ -61,7 +66,7 @@ function Graph({ data, period }: GraphProps) {
             dataKey="name"
             type="number"
             scale="time"
-            interval={intervalFormatter(data.length, 6)}
+            interval={intervalFormatter(data.length, amountOfPoints)}
             domain={['auto', 'auto']}
             tickFormatter={value => tickFormatter(value, period)}
             tick={{ fill: '#9aa0a6' }}

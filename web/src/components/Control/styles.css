@@ -71,3 +71,25 @@
 .currency-value-input[type='number'] {
   -moz-appearance: textfield;
 }
+
+@media only screen and (max-width: 500px) {
+  .control-wrapper {
+    width: 100%;
+  }
+
+  .control-wrapper:nth-child(2) {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .currency-value-input {
+    font-size: 14px;
+    height: 38px;
+  }
+
+  .currency-selector {
+    height: 38px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}
