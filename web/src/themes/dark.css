@@ -1,0 +1,10 @@
+html[data-theme="dark"] {
+  --primaryBg: #202124;
+  --primaryText: #f0f0f0;
+  --secondaryText: #bdc1c6;
+  --primaryButtonText: #8ab4f8;
+  --primaryGraph: #82ca9d;
+  --secondaryGraph: #f28b82;
+  --primaryScrollBar: #4f5055;
+  --secondaryScrollBar: #4f5055b6;
+}

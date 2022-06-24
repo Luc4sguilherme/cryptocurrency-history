@@ -16,13 +16,13 @@
 }
 
 .period:checked + label {
-  color: #8ab4f8;
+  color: var(--primaryButtonText);
   position: relative;
 }
 
 .period:checked + label::after {
   content: '';
-  background: #8ab4f8;
+  background:  var(--primaryButtonText);
   border-radius: 4px 4px 0 0;
   width: 120%;
   height: 4px;

@@ -1,7 +1,7 @@
 .control-wrapper {
   border: 1px solid #5f6368;
-  caret-color: #48a1ff;
-  color: #999da2;
+  caret-color: var(--primaryButtonText);
+  color: var(--secondaryText);
   overflow: hidden;
   border-radius: 6px;
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .currency-value-input {
-  background-color: #202124;
+  background-color: var(--primaryBg);
   margin: 0;
   outline: 0;
   overflow: hidden;
@@ -28,7 +28,7 @@
   font-family: arial, sans-serif;
   border: 0;
   height: 48px;
-  color: #bdc1c6;
+  color: var(--secondaryText);
 }
 
 .currency-selector {
@@ -39,8 +39,8 @@
   text-align: left;
   z-index: 1;
   word-break: break-all;
-  color: #bdc1c6;
-  background-color: #202124;
+  color: var(--secondaryText);
+  background-color: var(--primaryBg);
   margin-right: 10px;
   text-align-last: right;
 }
@@ -54,11 +54,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4f5055;
+  background: var(--primaryScrollBar);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4f5055b6;
+  background: var(--secondaryScrollBar);
 }
 
 .currency-value-input::-webkit-outer-spin-button,

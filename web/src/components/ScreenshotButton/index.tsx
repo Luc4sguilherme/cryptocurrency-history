@@ -18,9 +18,12 @@ function ScreenshotButton() {
   async function handleTakeScreenshot() {
     try {
       const ignoreElements = ['download-button', 'converter-wrapper'];
+      const backgroundColor = getComputedStyle(
+        document.documentElement,
+      ).getPropertyValue('--primaryBg');
 
       const canvas = await html2canvas(document.querySelector('.App')!, {
-        backgroundColor: '#202124',
+        backgroundColor,
         ignoreElements: element => {
           return ignoreElements.some(className =>
             element.classList.contains(className),
@@ -49,7 +52,7 @@ function ScreenshotButton() {
         className="download-icon"
       >
         <title>Download</title>
-        <g fill="#bdc1c6" fillRule="evenodd">
+        <g fill="var(--secondaryText)" fillRule="evenodd">
           <path
             d="M15.031 9.016v4H3v-4H1V16h15.938V9.016h-1.907Z"
             className="si-glyph-fill"

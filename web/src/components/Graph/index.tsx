@@ -59,8 +59,16 @@ function Graph({ data, period }: GraphProps) {
         <ComposedChart data={data} margin={{ left: 25 }}>
           <defs>
             <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="15%" stopColor="#82ca9d" stopOpacity={0.1} />
-              <stop offset="90%" stopColor="#2f3235" stopOpacity={0.1} />
+              <stop
+                offset="15%"
+                stopColor="var(--primaryGraph)"
+                stopOpacity={0.1}
+              />
+              <stop
+                offset="90%"
+                stopColor="var(--primaryBg)"
+                stopOpacity={0.1}
+              />
             </linearGradient>
           </defs>
           <XAxis
@@ -70,13 +78,13 @@ function Graph({ data, period }: GraphProps) {
             interval={intervalFormatter(data.length, amountOfPoints)}
             domain={['auto', 'auto']}
             tickFormatter={value => tickFormatter(value, period)}
-            tick={{ fill: '#9aa0a6' }}
+            tick={{ fill: 'var(--secondaryText)' }}
             dy={5}
           />
           <YAxis
             domain={['auto', 'auto']}
             padding={{ top: 15, bottom: 15 }}
-            tick={{ fill: '#9aa0a6' }}
+            tick={{ fill: 'var(--secondaryText)' }}
             dx={-10}
             tickFormatter={value => numberFormatter(value, 2, true) as string}
           />
@@ -88,10 +96,10 @@ function Graph({ data, period }: GraphProps) {
           <Line
             type="monotone"
             dataKey="price"
-            stroke="#82ca9d"
+            stroke="var(--primaryGraph)"
             dot={false}
             activeDot={{
-              fill: '#82ca9d',
+              fill: 'var(--primaryGraph)',
               strokeWidth: 0,
             }}
           />

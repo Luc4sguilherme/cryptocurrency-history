@@ -13,11 +13,12 @@
   font-weight: 700;
   font-size: 32px;
   margin-right: 10px;
+  color: var(--primaryText);
 }
 
 .currency {
   font-size: 16px;
-  color: #9aa0a6;
+  color: var(--secondaryText);
 }
 
 .status {
@@ -36,7 +37,7 @@
 }
 
 .font-link {
-  color: #8a8a8a;
+  color: var(--secondaryText);
   text-decoration: underline;
 }
 

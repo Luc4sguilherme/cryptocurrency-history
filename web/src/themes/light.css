@@ -1,0 +1,10 @@
+html[data-theme="light"] {
+  --primaryBg: #f0f0f0;
+  --primaryText: #212121;
+  --secondaryText: rgba(33, 33, 33, 0.8);
+  --primaryButtonText: #8ab4f8;
+  --primaryGraph: green;
+  --secondaryGraph: red;
+  --primaryScrollBar: #002;
+  --secondaryScrollBar: rgba(0, 0, 2, 0.6);
+}

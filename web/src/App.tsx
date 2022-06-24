@@ -8,6 +8,8 @@ import Graph from './components/Graph';
 import Infos from './components/Infos';
 import Loading from './components/Loading';
 import PeriodControl from './components/PeriodControl';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import { ThemeProvider } from './contexts/themeContext';
 import { getPricesHistory, getSpotPrices, Period } from './services/api';
 import numberFormatter from './util/numberFormatter';
 import timeSorter from './util/timeSorter';
@@ -56,31 +58,34 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="header-wrapper">
-        <h1 className="title">{cryptocurrency}</h1>
-      </header>
+    <ThemeProvider>
+      <div className="App">
+        <header className="header-wrapper">
+          <ThemeSwitcher />
+          <h1 className="title">{cryptocurrency}</h1>
+        </header>
 
-      <main className="contents-wrapper">
-        <Infos
-          currency={currency}
-          currencyPrice={currencyPrice}
-          historic={historic}
-        />
-        <PeriodControl setPeriod={setPeriod} />
-        <Graph data={historic} period={period} />
-      </main>
+        <main className="contents-wrapper">
+          <Infos
+            currency={currency}
+            currencyPrice={currencyPrice}
+            historic={historic}
+          />
+          <PeriodControl setPeriod={setPeriod} />
+          <Graph data={historic} period={period} />
+        </main>
 
-      <footer className="footer-wrapper">
-        <Converter
-          currency={currency}
-          cryptocurrency={cryptocurrency}
-          currencyPrice={currencyPrice}
-          setCurrency={setCurrency}
-          setCryptocurrency={setCryptocurrency}
-        />
-      </footer>
-    </div>
+        <footer className="footer-wrapper">
+          <Converter
+            currency={currency}
+            cryptocurrency={cryptocurrency}
+            currencyPrice={currencyPrice}
+            setCurrency={setCurrency}
+            setCryptocurrency={setCryptocurrency}
+          />
+        </footer>
+      </div>
+    </ThemeProvider>
   );
 }
 

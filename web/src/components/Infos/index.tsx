@@ -49,7 +49,11 @@ function Infos({ currency, currencyPrice, historic }: InfosProps) {
       {status && (
         <div
           className="status"
-          style={{ color: status.startsWith('+') ? '#82ca9d' : '#f28b82' }}
+          style={{
+            color: status.startsWith('+')
+              ? 'var(--primaryGraph)'
+              : 'var(--secondaryGraph)',
+          }}
         >
           {status}
         </div>

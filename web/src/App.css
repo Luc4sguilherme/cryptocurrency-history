@@ -12,8 +12,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #202124;
-  color: #bdc1c6;
+  background-color: var(--primaryBg);
+  color: var(--secondaryText);
   font-family: arial, sans-serif;
 }
 
@@ -30,7 +30,7 @@
   padding-bottom: 50px;
   text-align: center;
   font-size: 40px;
-  color: #f0f0f0;
+  color: var(--primaryText);
 }
 
 .contents-wrapper {
@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #202124;
+  background-color: var(--primaryBg);
 }
 
 .footer-wrapper {
