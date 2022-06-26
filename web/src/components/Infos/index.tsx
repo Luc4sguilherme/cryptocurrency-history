@@ -59,7 +59,9 @@ function Infos({ currency, currencyPrice, historic }: InfosProps) {
         </div>
       )}
       <div className="infos-source">
-        <div className="infos-date">{moment().utc().format('lll z')}</div>
+        <div className="infos-date">
+          {moment().utc().local().format('lll Z')}
+        </div>
         <span className="separator"> - </span>
         <div className="source">
           <a href="https://www.coinbase.com/price/" className="source-link">

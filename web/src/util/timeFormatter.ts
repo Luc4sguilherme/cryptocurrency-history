@@ -3,20 +3,22 @@ import moment from 'moment';
 import { Period } from '../services/api';
 
 export default function timeFormatter(time: string, period: Period) {
+  const localTime = moment(time).utc().local();
+
   switch (period) {
     case 'hour':
-      return moment(time).utc().format('HH:mm');
+      return localTime.format('HH:mm');
     case 'day':
-      return moment(time).utc().format('MM/DD - HH:mm');
+      return localTime.format('MM/DD - HH:mm');
     case 'week':
-      return moment(time).utc().format('llll');
+      return localTime.format('llll');
     case 'month':
-      return moment(time).utc().format('lll');
+      return localTime.format('lll');
     case 'year':
-      return moment(time).utc().format('ll');
+      return localTime.format('ll');
     case 'all':
-      return moment(time).utc().format('ll');
+      return localTime.format('ll');
     default:
-      return moment(time).utc();
+      return localTime;
   }
 }
