@@ -36,7 +36,7 @@
   margin: 0 8px;
 }
 
-.font-link {
+.source-link {
   color: var(--secondaryText);
   text-decoration: underline;
 }
