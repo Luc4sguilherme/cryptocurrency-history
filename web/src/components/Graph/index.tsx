@@ -38,10 +38,9 @@ function CustomTooltip(props: any) {
     ] = payload;
 
     return (
-      <div>
-        <p>
-          {numberFormatter(price, 2, true)} {periodFormatter(time, period)}
-        </p>
+      <div className="tooltip">
+        <p>{numberFormatter(price, 2, true)}</p>
+        <p>{periodFormatter(time, period)}</p>
       </div>
     );
   }

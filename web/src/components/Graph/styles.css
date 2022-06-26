@@ -5,6 +5,13 @@
   position: relative;
 }
 
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
 @media only screen and (max-width: 600px) {
   .graph-container {
     height: 30vh;
