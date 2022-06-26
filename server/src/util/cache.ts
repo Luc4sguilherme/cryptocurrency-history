@@ -1,6 +1,10 @@
+import moment from 'moment';
 import NodeCache from 'node-cache';
 
-const cache = new NodeCache();
+const cache = new NodeCache({
+  deleteOnExpire: true,
+  checkperiod: moment.duration(1, 'minutes').asSeconds(),
+});
 
 export function get(key: string) {
   return cache.get(key);

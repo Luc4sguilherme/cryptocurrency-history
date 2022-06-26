@@ -27,7 +27,7 @@ export async function pricesHistory(req: Request, res: Response) {
       currencyPair,
       period as string,
     );
-    const cacheDuration = Number(moment.duration(1, 'minutes'));
+    const cacheDuration = moment.duration(1, 'minutes').asSeconds();
 
     cache.set(cacheKey, pricesHistory, cacheDuration);
 
@@ -58,7 +58,7 @@ export async function spotPrices(req: Request, res: Response) {
     }
 
     const spotPrices = await coinbase.getSpotPrice(currencyPair);
-    const cacheDuration = Number(moment.duration(1, 'minutes'));
+    const cacheDuration = moment.duration(1, 'minutes').asSeconds();
 
     cache.set(cacheKey, spotPrices, cacheDuration);
 
@@ -82,7 +82,7 @@ export async function listCryptocurrencies(req: Request, res: Response) {
     }
 
     const cryptocurrencies = await coinbase.getCryptocurrencies();
-    const cacheDuration = Number(moment.duration(24, 'hours'));
+    const cacheDuration = moment.duration(24, 'hours').asSeconds();
 
     cache.set(cacheKey, cryptocurrencies, cacheDuration);
 

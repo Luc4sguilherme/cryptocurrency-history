@@ -16,7 +16,7 @@ export async function listCurrencies(req: Request, res: Response) {
     }
 
     const currencies = await coinbase.getCurrencies();
-    const cacheDuration = Number(moment.duration(24, 'hours'));
+    const cacheDuration = moment.duration(24, 'hours').asSeconds();
 
     cache.set(cacheKey, currencies, cacheDuration);
 
