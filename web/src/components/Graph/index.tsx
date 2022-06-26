@@ -16,8 +16,8 @@ import { Period } from '../../services/api';
 import intervalFormatter from '../../util/intervalFormatter';
 import isDeviceMobile from '../../util/isDeviceMobile';
 import numberFormatter from '../../util/numberFormatter';
+import periodFormatter from '../../util/periodFormatter';
 import tickFormatter from '../../util/tickFormatter';
-import timeFormatter from '../../util/timeFormatter';
 import ScreenshotButton from '../ScreenshotButton';
 
 const POINTS = 6;
@@ -39,8 +39,8 @@ function CustomTooltip(props: any) {
 
     return (
       <div>
-        <p style={{ wordSpacing: '5px' }}>
-          {numberFormatter(price, 2, true)} {timeFormatter(time, period)}
+        <p>
+          {numberFormatter(price, 2, true)} {periodFormatter(time, period)}
         </p>
       </div>
     );

@@ -1,11 +1,9 @@
-import moment from 'moment';
-
 export default function timeSorter(timeA: string, timeB: string) {
-  if (moment(timeA).isBefore(timeB)) {
+  if (new Date(timeA).getTime() < new Date(timeB).getTime()) {
     return -1;
   }
 
-  if (moment(timeA).isAfter(timeB)) {
+  if (new Date(timeA).getTime() > new Date(timeB).getTime()) {
     return 1;
   }
 

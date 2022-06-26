@@ -11,23 +11,32 @@ const OPTIONS = {
     minute: 'numeric',
   },
   week: {
+    hour: 'numeric',
+    minute: 'numeric',
     weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
   },
   month: {
-    month: '2-digit',
-    day: '2-digit',
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
   },
   year: {
     year: 'numeric',
-    month: '2-digit',
+    month: 'short',
+    day: 'numeric',
   },
   all: {
     year: 'numeric',
-    month: '2-digit',
+    month: 'short',
+    day: 'numeric',
   },
 };
 
-export default function tickFormatter(time: string, period: Period) {
+export default function periodFormatter(time: string, period: Period) {
   const locale = window.navigator.language;
   const formatOptions = OPTIONS[period] as Intl.DateTimeFormatOptions;
 

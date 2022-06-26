@@ -1,6 +1,5 @@
 import './App.css';
 
-import moment from 'moment';
 import { useEffect, useState } from 'react';
 
 import Converter from './components/Converter';
@@ -33,7 +32,7 @@ function App() {
         const prices = data.prices
           .map(({ time, price }) => {
             return {
-              name: moment(time).valueOf(),
+              name: new Date(time).getTime(),
               price: numberFormatter(price, 2) as number,
               time,
             };

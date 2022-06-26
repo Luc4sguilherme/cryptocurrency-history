@@ -1,10 +1,9 @@
 import './styles.css';
-
-import moment from 'moment';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { History } from '../../App';
 import numberFormatter from '../../util/numberFormatter';
+import timeFormatter from '../../util/timeFormatter';
 
 type InfosProps = {
   currency: string;
@@ -14,6 +13,19 @@ type InfosProps = {
 
 function Infos({ currency, currencyPrice, historic }: InfosProps) {
   const [status, setStatus] = useState<string | undefined>(undefined);
+  const dateNow = useMemo(
+    () =>
+      timeFormatter(new Date(), window.navigator.language, {
+        hour: 'numeric',
+        minute: 'numeric',
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        timeZoneName: 'shortOffset',
+      }),
+    [historic],
+  );
 
   useEffect(() => {
     if (historic.length > 0) {
@@ -59,9 +71,7 @@ function Infos({ currency, currencyPrice, historic }: InfosProps) {
         </div>
       )}
       <div className="infos-source">
-        <div className="infos-date">
-          {moment().utc().local().format('lll Z')}
-        </div>
+        <div className="infos-date">{dateNow}</div>
         <span className="separator"> - </span>
         <div className="source">
           <a href="https://www.coinbase.com/price/" className="source-link">
