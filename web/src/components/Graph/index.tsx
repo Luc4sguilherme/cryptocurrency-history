@@ -55,7 +55,7 @@ function Graph({ data, period }: GraphProps) {
     <div className="graph-container">
       <ScreenshotButton />
       <ResponsiveContainer className="graph">
-        <ComposedChart data={data} margin={{ left: 25 }}>
+        <ComposedChart data={data} margin={{ left: 35 }}>
           <defs>
             <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
               <stop
